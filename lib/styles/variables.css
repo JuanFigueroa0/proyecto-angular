@@ -1,0 +1,41 @@
+/* src/lib/styles/variables.css */
+:root {
+  /* Paleta principal */
+  --primary: #1a3a5c;
+  --primary-light: #2a5298;
+  --primary-hover: #122b45;
+  --accent: #c9a84c;
+  --accent-light: #e8c860;
+  --accent-50: rgba(201, 168, 76, 0.1);
+
+  /* Textos */
+  --text-primary: #1a2332;
+  --text-muted: #64748b;
+
+  /* Fondos */
+  --bg-app: #f1f5f9;
+  --bg-light: #f8fafc;
+
+  /* Sidebar */
+  --bg-sidebar: #0f2540;
+  --bg-sidebar-hover: rgba(255, 255, 255, 0.07);
+  --bg-sidebar-active: rgba(201, 168, 76, 0.12);
+  --text-sidebar: rgba(255, 255, 255, 0.7);
+
+  /* Dimensiones layout */
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 64px;
+  --navbar-height: 64px;
+
+  /* Tipografía */
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Cinzel", Georgia, serif;
+
+  /* Efectos */
+  --transition: 0.2s ease;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.18);
+}

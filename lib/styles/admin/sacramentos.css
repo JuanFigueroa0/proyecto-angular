@@ -1,0 +1,504 @@
+/* ── Grid de cards ── */
+.sacramentos-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Card ── */
+.sac-admin-card {
+  background: white;
+  border: 1.5px solid var(--border-color, #e2e8f0);
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    box-shadow 0.15s,
+    border-color 0.15s;
+}
+.sac-admin-card:hover {
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
+  border-color: var(--primary, #2563eb);
+}
+.sac-admin-card.inactivo {
+  opacity: 0.6;
+  border-style: dashed;
+}
+
+/* ── Header de card ── */
+.sac-admin-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 0.875rem;
+}
+.sac-admin-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--primary-light, #eff6ff);
+  color: var(--primary, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.sac-admin-nombre-wrap {
+  flex: 1;
+  min-width: 0;
+}
+.sac-admin-nombre {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--primary, #2563eb);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sac-inactivo-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.1rem 0.4rem;
+  border-radius: 10px;
+  margin-top: 0.15rem;
+}
+.sac-admin-acciones {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* ── Badges de propiedades ── */
+.sac-admin-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0 1.25rem 0.875rem;
+}
+.sac-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+}
+.badge-riesgo-alto {
+  background: #fef2f2;
+  color: #991b1b;
+}
+.badge-riesgo-bajo {
+  background: #dcfce7;
+  color: #166534;
+}
+.badge-certificado {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+.badge-pago {
+  background: #fef3c7;
+  color: #92400e;
+}
+.badge-edad {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+/* ── Footer de card ── */
+.sac-admin-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: var(--surface, #f8fafc);
+  border-top: 1px solid var(--border-color, #f1f5f9);
+}
+.sac-req-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #7c3aed;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.sac-req-link:hover {
+  text-decoration: underline;
+}
+.sac-ver-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary, #2563eb);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.sac-ver-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Modal grande ── */
+.modal-box-lg {
+  max-width: 580px;
+}
+
+/* ── Checks row ── */
+.checks-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border-radius: 10px;
+}
+.check-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+.check-toggle input {
+  display: none;
+}
+.check-toggle-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 2px solid var(--border-color, #e2e8f0);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+  flex-shrink: 0;
+}
+.check-toggle input:checked ~ .check-toggle-box {
+  background: var(--primary, #2563eb);
+  border-color: var(--primary, #2563eb);
+}
+.check-toggle input:checked ~ .check-toggle-box::after {
+  content: "✓";
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.check-toggle-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ── Misc ── */
+.alerta-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #b91c1c;
+  font-size: 0.875rem;
+}
+/* ── Grid de cards ── */
+.sacramentos-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ── Card ── */
+.sac-admin-card {
+  background: white;
+  border: 1.5px solid var(--border-color, #e2e8f0);
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    box-shadow 0.15s,
+    border-color 0.15s;
+}
+.sac-admin-card:hover {
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
+  border-color: var(--primary, #2563eb);
+}
+.sac-admin-card.inactivo {
+  opacity: 0.6;
+  border-style: dashed;
+}
+
+/* ── Header de card ── */
+.sac-admin-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 0.875rem;
+}
+.sac-admin-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--primary-light, #eff6ff);
+  color: var(--primary, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.sac-admin-nombre-wrap {
+  flex: 1;
+  min-width: 0;
+}
+.sac-admin-nombre {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--primary, #2563eb);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sac-inactivo-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.1rem 0.4rem;
+  border-radius: 10px;
+  margin-top: 0.15rem;
+}
+.sac-admin-acciones {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* ── Badges de propiedades ── */
+.sac-admin-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0 1.25rem 0.875rem;
+}
+.sac-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+}
+.badge-riesgo-alto {
+  background: #fef2f2;
+  color: #991b1b;
+}
+.badge-riesgo-bajo {
+  background: #dcfce7;
+  color: #166534;
+}
+.badge-certificado {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+.badge-pago {
+  background: #fef3c7;
+  color: #92400e;
+}
+.badge-edad {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+/* ── Footer de card ── */
+.sac-admin-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: var(--surface, #f8fafc);
+  border-top: 1px solid var(--border-color, #f1f5f9);
+}
+.sac-req-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #7c3aed;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.sac-req-link:hover {
+  text-decoration: underline;
+}
+.sac-ver-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary, #2563eb);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.sac-ver-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Modal grande ── */
+.modal-box-lg {
+  max-width: 580px;
+}
+
+/* ── Checks row ── */
+.checks-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+  border-radius: 10px;
+}
+.check-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+.check-toggle input {
+  display: none;
+}
+.check-toggle-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 2px solid var(--border-color, #e2e8f0);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+  flex-shrink: 0;
+}
+.check-toggle input:checked ~ .check-toggle-box {
+  background: var(--primary, #2563eb);
+  border-color: var(--primary, #2563eb);
+}
+.check-toggle input:checked ~ .check-toggle-box::after {
+  content: "✓";
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.check-toggle-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* ── Misc ── */
+.alerta-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: #b91c1c;
+  font-size: 0.875rem;
+}
+.sac-detalle-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.sac-detalle-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--primary-light, #eff6ff);
+  color: var(--primary, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.btn-requisitos {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #ede9fe;
+  color: #6d28d9;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  transition: background 0.15s;
+}
+.btn-requisitos:hover {
+  background: #ddd6fe;
+}
+
+/* Prop cards */
+.prop-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+.prop-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  display: block;
+}
+.prop-val {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.prop-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.badge-riesgo-alto {
+  color: #dc2626 !important;
+}
+.badge-riesgo-bajo {
+  color: #16a34a !important;
+}
+
+.badge-estado {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.badge-warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+.badge-info {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+.badge-success {
+  background: #dcfce7;
+  color: #166534;
+}
+.badge-danger {
+  background: #fef2f2;
+  color: #991b1b;
+}
+.badge-secondary {
+  background: #f1f5f9;
+  color: #475569;
+}
